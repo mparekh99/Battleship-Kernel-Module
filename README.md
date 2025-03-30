@@ -120,6 +120,9 @@ To ensure my syscall functions met the given specifications, I employed **Test-D
 ### Testing:
 I used the provided test file to validate my implementation of each syscall. The tests covered various scenarios like invalid moves, board size changes, and ensuring that file offsets were correctly adjusted after reading/writing moves. This robust testing approach helped ensure that the game functionality was implemented correctly and efficiently.
 
+### Kernel Synchronization:
+To ensure synchronized updates to the game state and prevent race conditions, I utilized **mutexes** and **kernel locking** mechanisms. These techniques ensured that multiple processes could not update the game state simultaneously, maintaining consistency and correctness in the game logic.
+
 ---
 
 ## Conclusion
