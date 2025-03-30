@@ -1,0 +1,59 @@
+From 79309ec8c76f1d5842397dbe6aa093fbf56bf9f0 Mon Sep 17 00:00:00 2001
+From: Mihir Parekh <mihir_parekh@fall2024-uml.kdlp.underground.software>
+Date: Thu, 5 Dec 2024 22:01:29 -0500
+Subject: [PATCH v2 0/2] F1 - mihir_parekh
+
+Completed: 65%
+
+TimeSpent: 3 Days
+
+Approach: Used the lecture tictactoe, google, matrix, chatgpt
+
+Problems:
+To start I was stuck trying to understand how to write and
+read for the longest time. Didn't realize that they are an
+illusion. And understanding the mutex was a big learning
+curve for me for some reason. I definetly have many memory
+leaks but I tried to maintain thread saftey. I ended up coding
+read, ioctl, and write. My read was very close to being
+completed, however I ran into issues with snprintf trying
+to convert integer coordinates into strings to store
+into buf and pass it to the user via copy_to_user. Overall
+I really struggled with this project and had to present
+today as well. I hope I can get as much credit as possible
+I saw there is another Pacth needed where I add 5 tests,
+however I spent time correcting the tests I got sent and
+have worked on this for way too long.
+
+V2: In this version I actually have an attempt.
+Although some of the code is commented out, I
+tried writting comments in case you needed to
+see. When you sudo dmesg it prints the gameboard.
+With the randomized ships being placed and writing
+seems to work as well. Read is the furtherst I
+got, but the logic seems sound.
+
+Signed-off-by: Mihir Parekh
+<mihir_parekh@fall2024-uml.kdlp.underground.software>
+
+
+
+Mihir Parekh (2):
+  F1 -- Patch 1
+  F1 -- Patch 2
+
+ mihir-parekh/F1/Makefile       |  18 +
+ mihir-parekh/F1/battleship.c   | 553 ++++++++++++++++++++++
+ mihir-parekh/F1/tests/Makefile |  15 +
+ mihir-parekh/F1/tests/spec.txt | 193 ++++++++
+ mihir-parekh/F1/tests/test.c   | 810 +++++++++++++++++++++++++++++++++
+ 5 files changed, 1589 insertions(+)
+ create mode 100644 mihir-parekh/F1/Makefile
+ create mode 100644 mihir-parekh/F1/battleship.c
+ create mode 100644 mihir-parekh/F1/tests/Makefile
+ create mode 100644 mihir-parekh/F1/tests/spec.txt
+ create mode 100644 mihir-parekh/F1/tests/test.c
+
+-- 
+2.46.0
+
